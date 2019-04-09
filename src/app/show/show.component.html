@@ -1,0 +1,37 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-5 col-md-offset-3">
+      <form #myfrm="ngForm">
+        <div class="form-group">
+          <label>Name :</label>
+          <input type="text" #name="ngModel" [(ngModel)]="dt.name" class="form-control" name="name" required>
+          
+        </div>
+        <div class="form-group">
+          <label for="">Place :</label>
+          <input type="text" #place="ngModel" [(ngModel)]="dt.place" class="form-control" name="place" required>
+         
+        </div>
+
+        <div class="form-group">
+          <label for="">Qualification :</label>
+          <input type="text" #qualification="ngModel" [(ngModel)]="dt.qualification" class="form-control" name="qualification" required>
+          
+        </div>
+        <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<table class="table">
+  <tr><th>name</th>
+  <th>place</th>
+  <th>qualification</th>
+  </tr>
+  <tr *ngFor="let d of this.dt"><td>{{d.name}}</td>
+  <td>{{d.place}}</td>
+  <td>{{d.qualification}}</td></tr>
+  </table>

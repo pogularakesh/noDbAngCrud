@@ -1,0 +1,92 @@
+<!-- <div class="container">
+<button type="button" data-toggle="modal" data-target="#myModal">show details</button>
+<div class="modal" id="myModal">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+  <button type="button" class="close" data-dismiss="modal">close</button>
+
+</div>
+<div class="modal-body">
+    <div class="container">
+        <div class="row">
+          <div class="col-md-5 col-md-offset-3">
+            <form #myfrm="ngForm">
+              <div class="form-group">
+                <label>Name :</label>
+                <input type="text" #name="ngModel" [(ngModel)]="dt.name" class="form-control" name="name" required>
+                
+              </div>
+              <div class="form-group">
+                <label for="">Place :</label>
+                <input type="text" #place="ngModel" [(ngModel)]="dt.place" class="form-control" name="place" required>
+               
+              </div>
+      
+              <div class="form-group">
+                <label for="">Qualification :</label>
+                <input type="text" #qualification="ngModel" [(ngModel)]="dt.qualification" class="form-control" name="qualification" required>
+                
+              </div>
+               <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button>
+      
+            </form>
+          </div>
+        </div>
+      </div>
+</div>
+</div>
+<div class="modal-footer">
+<button type="button" class="btn btn-primary" data-dismiss="modal">save</button>
+</div>
+</div>
+</div>
+</div> -->
+
+
+<div class="container">
+  <div class="row">
+     <div class="col-md-5 col-md-offset-3">
+        <form #myfrm="ngForm">
+            <!-- <div class="form-group">
+                <label>Name :</label>
+                <input type="text" #nm="ngModel" [(ngModel)]="dt.nm" name="nm" class="form-control" required>
+                <span *ngIf=nm.errors&&(nm.touched||nm.dirty)>
+                  <span [hidden]=!nm.errors.required style="color: red">name required</span>
+                </span>
+              </div> -->
+           <div class="form-group">
+              <label>Name :</label>
+              <input type="text" #nm ngModel class="form-control" name="nm" required>
+              
+           </div>
+           <div class="form-group">
+              <label for="">Place :</label>
+              <input type="text" #place ngModel class="form-control" name="place" required>
+              
+           </div>
+
+           <div class="form-group">
+              <label for="">Qualification :</label>
+              <input type="text" #qualification ngModel class="form-control" name="qualification" required>
+
+           </div>
+           <!-- <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button> -->
+           <div class="modal-footer">
+              <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">save</button>
+           </div>
+        </form>
+     </div>
+  </div>
+</div>
+
+
+<table class="table">
+  <tr><th>name</th>
+  <th>place</th>
+  <th>qualification</th>
+  </tr>
+  <tr *ngFor="let d of data"><td>{{d.nm}}</td>
+  <td>{{d.place}}</td>
+  <td>{{d.qualification}}</td></tr>
+  </table> 

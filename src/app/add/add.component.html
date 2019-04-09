@@ -1,0 +1,145 @@
+<br><br>
+
+<!-- <button (click)="onClick()" mat-raised-button>add</button> -->
+   <button type="button" data-toggle="modal" data-target="#myModal" mat-raised-button>add</button>
+   <div class="modal" id="myModal">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">close</button>
+
+            </div>
+            <div class="modal-body">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-5 col-md-offset-3">
+                        <form #myfrm="ngForm">
+                           <div class="form-group">
+                              <label>Name :</label>
+                              <input type="text" #name ngModel class="form-control" name="name" required>
+
+                              <!-- <input type="text" #name="ngModel" [(ngModel)]="dt.name" class="form-control" name="name" required> -->
+                                 <!-- <span *ngIf=nm.errors&&(nm.touched||nm.dirty)>
+                                    <span [hidden]=!nm.errors.required style="color: red">enter your name</span>
+                                  </span> -->
+
+                           </div>
+                           <div class="form-group">
+                              <label for="">Place :</label>
+                              <!-- <input type="text" #place="ngModel" [(ngModel)]="dt.place" class="form-control"
+                                 name="place" required> -->
+                                 <input type="text" #place ngModel class="form-control" name="place" required>
+
+                           </div>
+
+                           <div class="form-group">
+                              <label for="">Qualification :</label>
+                              <!-- <input type="text" #qualification="ngModel" [(ngModel)]="dt.qualification"
+                                 class="form-control" name="qualification" required> -->
+                                 <input type="text" #qualification ngModel class="form-control" name="qualification" required>
+
+                           </div>
+                           <!-- <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button> -->
+                           <div class="modal-footer">
+                              <button type="button" class="btn btn-primary" data-dismiss="modal"
+                                 (click)="Submitclick(myfrm)">save</button>
+                           </div>
+                        </form>
+                     </div>
+                  </div>
+               </div>
+
+
+               <!-- <table class="table">
+                  <tr><th>name</th>
+                  <th>place</th>
+                  <th>qualification</th>
+                  </tr>
+                  <tr *ngFor="let d of this.dt"><td>{{d.name}}</td>
+                  <td>{{d.place}}</td>
+                  <td>{{d.qualification}}</td></tr>
+                  </table>   -->
+            </div>
+         </div>
+         <div class="modal-footer">
+            <!-- <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="Submitclick(myfrm)">save</button> -->
+         </div>
+      </div>
+   </div>
+
+<!-- <button (click)="onSubmit()" mat-raised-button>modify</button> -->
+   <button type="button" data-toggle="modal" data-target="#myModal" mat-raised-button>modify</button>
+    <!-- <div class="modal" id="myModal">
+      <div class="modal-dialog">
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal">close</button>
+
+            </div>
+            <div class="modal-body">
+               <div class="container">
+                  <div class="row">
+                     <div class="col-md-5 col-md-offset-3">
+                        <form #myfrm="ngForm">
+                           <div class="form-group">
+                              <label>Name :</label>
+                              <input type="text" #name="ngModel" [(ngModel)]="dt.name" class="form-control" name="name"
+                                 required>
+
+                           </div>
+                           <div class="form-group">
+                              <label for="">Place :</label>
+                              <input type="text" #place="ngModel" [(ngModel)]="dt.place" class="form-control"
+                                 name="place" required>
+
+                           </div>
+
+                           <div class="form-group">
+                              <label for="">Qualification :</label>
+                              <input type="text" #qualification="ngModel" [(ngModel)]="dt.qualification"
+                                 class="form-control" name="qualification" required>
+
+                           </div> -->
+                           <!-- <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button> -->
+
+                        <!-- </form>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <div class="modal-footer">
+            <button type="button" class="btn btn-primary" data-dismiss="modal">save</button>
+         </div>
+      </div>
+   </div>  -->
+
+<button (click)="onclick()" mat-raised-button>delete</button>
+
+<br><br><br>
+<mat-paginator [length]="10" [pageSize]="3" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event">
+</mat-paginator>
+
+<table class="table">
+   <tr>
+      <th>action</th>
+      <th>name</th>
+      <th>place</th>
+      <th>qualification</th>
+   </tr>
+   <tr *ngFor="let d of data">
+      <td><input type="checkbox" (click)="onCheck()" [(ngModel)]="checkboxValue" name="checked"></td>
+      <td>{{d.name}}</td>
+      <td>{{d.place}}</td>
+      <td>{{d.qualification}}</td>
+   </tr>
+</table>
+
+
+
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
