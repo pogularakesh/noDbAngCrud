@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { UserData } from '../model/User';
+import { UserService } from '../services/user.service';
 
 @Component({
   selector: 'app-show',
@@ -7,22 +9,20 @@ import { Router } from '@angular/router';
   styleUrls: ['./show.component.css']
 })
 export class ShowComponent implements OnInit {
-
-   dt:any=[]
-   data:string;
-  constructor(private router:Router) { }
-  Submitclick(frm){
-    this.dt.name = frm.value.name;
-    this.dt.place = frm.value.place;
-    this.dt.qualification = frm.value.qualification;
-    console.log(this.dt);
-     this.dt.push(this.dt);
-// localStorage.setItem(this.data,JSON.stringify(this.dt))    
-//  var data=localStorage.getItem(this.data)
-//  console.log(data)
-this.router.navigate(['add'])
-  }
+ud:UserData;
+rak:any=[];
+  constructor(private router:Router,private us:UserService) {
+    this.ud=new  UserData()
+   }
+  
   ngOnInit() {
+        this.us.getData().subscribe((data) => {
+      console.log(data)
+      this.ud = data;
+//  this.rak.push(this.ud)
+//  console.log(this.rak)
+
+    })
   }
 
 }

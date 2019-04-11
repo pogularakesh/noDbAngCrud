@@ -1,4 +1,4 @@
-<div class="container">
+ <!-- <div class="container">
   <div class="row">
     <div class="col-md-5 col-md-offset-3">
       <form #myfrm="ngForm">
@@ -23,7 +23,7 @@
       </form>
     </div>
   </div>
-</div>
+</div> -->
 
 
 <table class="table">
@@ -31,7 +31,8 @@
   <th>place</th>
   <th>qualification</th>
   </tr>
-  <tr *ngFor="let d of this.dt"><td>{{d.name}}</td>
+  <tr *ngFor="let d of ud">
+    <td>{{d.name}}</td>
   <td>{{d.place}}</td>
   <td>{{d.qualification}}</td></tr>
   </table>

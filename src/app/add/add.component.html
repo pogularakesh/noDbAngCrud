@@ -16,9 +16,9 @@
                         <form #myfrm="ngForm">
                            <div class="form-group">
                               <label>Name :</label>
-                              <input type="text" #name ngModel class="form-control" name="name" required>
+                              <!-- <input type="text" #name ngModel class="form-control" name="name" required> -->
 
-                              <!-- <input type="text" #name="ngModel" [(ngModel)]="dt.name" class="form-control" name="name" required> -->
+                              <input type="text" #name="ngModel" [(ngModel)]="ud.name" class="form-control" name="name" required>
                                  <!-- <span *ngIf=nm.errors&&(nm.touched||nm.dirty)>
                                     <span [hidden]=!nm.errors.required style="color: red">enter your name</span>
                                   </span> -->
@@ -26,23 +26,22 @@
                            </div>
                            <div class="form-group">
                               <label for="">Place :</label>
-                              <!-- <input type="text" #place="ngModel" [(ngModel)]="dt.place" class="form-control"
-                                 name="place" required> -->
-                                 <input type="text" #place ngModel class="form-control" name="place" required>
+                              <input type="text" #place="ngModel" [(ngModel)]="ud.place" class="form-control"
+                                 name="place" required>
+                                 <!-- <input type="text" #place ngModel class="form-control" name="place" required> -->
 
                            </div>
 
                            <div class="form-group">
                               <label for="">Qualification :</label>
-                              <!-- <input type="text" #qualification="ngModel" [(ngModel)]="dt.qualification"
-                                 class="form-control" name="qualification" required> -->
-                                 <input type="text" #qualification ngModel class="form-control" name="qualification" required>
+                              <input type="text" #qualification="ngModel" [(ngModel)]="ud.qualification"
+                                 class="form-control" name="qualification" required>
+                                 <!-- <input type="text" #qualification ngModel class="form-control" name="qualification" required> -->
 
                            </div>
                            <!-- <button type="button" class="btn btn-primary" (click)="Submitclick(myfrm)">Submit</button> -->
                            <div class="modal-footer">
-                              <button type="button" class="btn btn-primary" data-dismiss="modal"
-                                 (click)="Submitclick(myfrm)">save</button>
+                              <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="btnclick(myfrm)">save</button>
                            </div>
                         </form>
                      </div>
@@ -117,18 +116,18 @@
 <button (click)="onclick()" mat-raised-button>delete</button>
 
 <br><br><br>
-<mat-paginator [length]="10" [pageSize]="3" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event">
-</mat-paginator>
+<!-- <mat-paginator [length]="10" [pageSize]="3" [pageSizeOptions]="[5, 10, 25, 100]" (page)="pageEvent = $event">
+</mat-paginator> -->
 
 <table class="table">
    <tr>
-      <th>action</th>
+      <!-- <th>action</th> -->
       <th>name</th>
       <th>place</th>
       <th>qualification</th>
    </tr>
-   <tr *ngFor="let d of data">
-      <td><input type="checkbox" (click)="onCheck()" [(ngModel)]="checkboxValue" name="checked"></td>
+   <tr *ngFor="let d of rak">
+      <!-- <td><input type="checkbox" (click)="onCheck()" [(ngModel)]="checkboxValue" name="checked"></td> -->
       <td>{{d.name}}</td>
       <td>{{d.place}}</td>
       <td>{{d.qualification}}</td>
